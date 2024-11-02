@@ -9,7 +9,7 @@ const config: CapacitorConfig = {
       enabled: true,
     },
     LocalNotifications: {
-      smallIcon: "icon-only",
+      smallIcon: "icon_only",
       iconColor: "#fffae2",
     },
   },
