@@ -28,7 +28,7 @@ const paddingOptions = [
     value: BiblePadding.default,
   },
   {
-    label: "Pequeño",
+    label: "Estrecho",
     value: BiblePadding.small,
   },
 ];

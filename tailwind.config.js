@@ -70,5 +70,15 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require("@tailwindcss/typography"),
+    /* plugin(function ({ addVariant, e }) {
+      addVariant("night", ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }) => {
+          return `.${e(`night${separator}${className}`)}:night`;
+        });
+      });
+    }), */
+  ],
 };

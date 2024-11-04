@@ -12,32 +12,24 @@ const AchievementsProvider = ({ children }: ProviderProps) => {
 
   useEffect(() => {
     if (achievements.lastEntered) {
-      const dateComparision = checkDate(achievements.lastEntered);
-      if (dateComparision === "TODAY") {
+      const dateComparison = checkDate(achievements.lastEntered);
+
+      if (dateComparison === "TODAY") {
         return;
       }
-      if (dateComparision === "NONE") {
+
+      if (dateComparison === "NONE") {
         resetInARow();
+      } else if (dateComparison === "YESTERDAY") {
+        addDay();
       }
-      addDay();
+
       updateLastEntered();
     } else {
       updateLastEntered();
     }
-    /* switch (dateComparision) {
-        case "TODAY":
-          break;
-        case "YESTERDAY":
-          addDay();
-          updateLastEntered();
-          break;
-        default:
-          resetInARow();
-          addDay();
-          updateLastEntered();
-          break;
-      } */
-  }, [achievements.lastEntered]);
+    console.log("AchievementsProvider");
+  }, [achievements.lastEntered, addDay, resetInARow, updateLastEntered]);
 
   useEffect(() => {
     if (preferences.fontSize) {
@@ -45,7 +37,7 @@ const AchievementsProvider = ({ children }: ProviderProps) => {
     }
   }, [preferences.fontSize]);
 
-  return children;
+  return <>{children}</>;
 };
 
 export { AchievementsProvider };

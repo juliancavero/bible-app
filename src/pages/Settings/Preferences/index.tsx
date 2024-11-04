@@ -33,6 +33,7 @@ const PreferencesPage = () => {
                   <SelectContent>
                     <SelectItem value="light">{Themes.light}</SelectItem>
                     <SelectItem value="dark">{Themes.dark}</SelectItem>
+                    <SelectItem value="night">{Themes.night}</SelectItem>
                     <SelectItem value="system">{Themes.system}</SelectItem>
                   </SelectContent>
                 </Select>
